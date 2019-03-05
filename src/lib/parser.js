@@ -104,6 +104,7 @@ const parseTweet = ($, element) => {
     .text()
 
   const screenName = $(element).attr('data-screen-name')
+  const name = $(element).attr('data-name')
   const id = $(element).attr('data-item-id')
   const text = parseText(
     $,
@@ -163,6 +164,7 @@ const parseTweet = ($, element) => {
 
   const tweet = {
     screenName,
+    name,
     id,
     time,
     isRetweet,
