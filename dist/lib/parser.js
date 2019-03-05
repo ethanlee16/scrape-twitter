@@ -160,7 +160,7 @@ var parseTweet = function parseTweet($, element) {
   }
 
   var tweet = {
-    screenName: screenName,
+    username: screenName,
     name: name,
     id: id,
     time: time,
@@ -173,8 +173,8 @@ var parseTweet = function parseTweet($, element) {
     images: images,
     urls: urls,
     replyCount: replyCount,
-    retweetCount: retweetCount,
-    favoriteCount: favoriteCount
+    retweets: retweetCount,
+    likes: favoriteCount
   };
   if (quote) {
     tweet.quote = quote;

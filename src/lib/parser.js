@@ -23,8 +23,8 @@ const parseActionCount = ($, element, action) => {
   )
   return wrapper.length !== 0
     ? +$(wrapper)
-      .first()
-      .attr('data-tweet-stat-count')
+        .first()
+        .attr('data-tweet-stat-count')
     : 0
 }
 
@@ -163,7 +163,7 @@ const parseTweet = ($, element) => {
   }
 
   const tweet = {
-    screenName,
+    username: screenName,
     name,
     id,
     time,
@@ -176,8 +176,8 @@ const parseTweet = ($, element) => {
     images,
     urls,
     replyCount,
-    retweetCount,
-    favoriteCount
+    retweets: retweetCount,
+    likes: favoriteCount
   }
   if (quote) {
     tweet.quote = quote
@@ -391,9 +391,9 @@ const toThreadedTweets = id => ({ $, _minPosition }) => {
         .first()
       const showMoreId = showMoreElement.attr('href')
         ? showMoreElement
-          .attr('href')
-          .match(/\d+/)
-          .pop()
+            .attr('href')
+            .match(/\d+/)
+            .pop()
         : undefined
       const tweetElements = $(threadedConversationElement)
         .find(MATCH_TWEETS_ONLY)
